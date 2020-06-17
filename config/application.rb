@@ -15,5 +15,6 @@ module PushAuthDemo
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.x.pushauth.base_uri = "https://api.unify.id"
   end
 end
