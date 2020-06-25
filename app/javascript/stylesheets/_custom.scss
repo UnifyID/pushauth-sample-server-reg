@@ -1,0 +1,56 @@
+/* Site-wide layout */
+body {
+  padding-top: 5rem;
+}
+.main-content {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  line-height: 2em;
+}
+.logo {
+  background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%22166.801%22%20width%3D%22166.752%22%20id%3D%22svg232%22%20version%3D%221.1%22%3E%3Cdefs%20id%3D%22defs152%22%3E%3Cstyle%20id%3D%22style150%22%3E%3C/style%3E%3C/defs%3E%3Cg%20transform%3D%22translate%28-.028%20.001%29%22%20data-name%3D%22Layer%202%22%20id%3D%22Layer_2%22%3E%3Cg%20data-name%3D%22Layer%201%22%20id%3D%22Layer_1-2%22%3E%3Cpath%20id%3D%22path170%22%20d%3D%22M83.39%20166.8A83.42%2083.42%200%200153.09%205.68a83.43%2083.43%200%2001113.69%2077.73%2083.48%2083.48%200%2001-83.39%2083.39zm0-149.15a65.74%2065.74%200%2000-65.74%2065.76%2065.8%2065.8%200%201065.74-65.76z%22%20fill%3D%22%23ec0000%22/%3E%3Cpath%20id%3D%22path172%22%20d%3D%22M64.18%2068.37a19.21%2019.21%200%200138.41.5%2019.53%2019.53%200%2001-.28%203.28%2019.24%2019.24%200%2001-8.71%2013%205.22%205.22%200%2000-2.34%205.53L97%20117.72a2.64%202.64%200%2001-2.58%203.19h-22a2.64%202.64%200%2001-2.58-3.19l5.71-27.07a5.3%205.3%200%2000-2.34-5.55%2019.31%2019.31%200%2001-9-16.73z%22%20fill%3D%22%2374797d%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A');
+  background-size: contain;
+  height: 30px;
+  width: 30px;
+}
+/* Login page */
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* 2fa loading page */
+.loader {
+  animation: spin 2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
