@@ -7,16 +7,38 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= yield :head %>
   </head>
 
   <body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/">
+        <span class="logo d-inline-block align-top"></span>
+        UnifyID PushAuth Sample
+      </a>
+    </nav>
     <% if flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        <%= flash[:notice] %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="alert"><%= flash[:alert] %></div>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= flash[:alert] %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     <% end %>
-    <%= yield %>
+
+    <main role="main" class="container">
+      <div class="main-content">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
