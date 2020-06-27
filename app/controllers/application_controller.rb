@@ -16,13 +16,7 @@ class ApplicationController < ActionController::Base
   def authorized
     unless logged_in?
       flash.alert = "You must be logged in to perform that action."
-      redirect_to "/login"
+      redirect_to login_path
     end
-  end
-
-  def home
-  end
-
-  def restricted
   end
 end
