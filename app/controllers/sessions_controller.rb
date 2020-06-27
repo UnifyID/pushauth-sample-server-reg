@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   before_action :semi_authorized!, only: [:init_2fa, :check_2fa, :finalize_2fa]
 
   def new
-    redirect_to "/" if logged_in?
+    redirect_to root_path if logged_in?
   end
 
   def create
@@ -19,14 +19,10 @@ class SessionsController < ApplicationController
 
       session[:pushauth_id] = response["id"]
 
-      redirect_to "/2fa"
+      redirect_to action: "init_2fa"
     else
-      flash.alert = "Sorry, that didn't work."
-      redirect_to "/login"
+      redirect_to login_path, alert: "Sorry, that didn't work."
     end
-  end
-
-  def init_2fa
   end
 
   def check_2fa
@@ -50,8 +46,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    flash.notice = "Successfully logged out."
-    redirect_to "/"
+    redirect_to root_path, notice: "Successfully logged out."
   end
 
   private
@@ -60,8 +55,7 @@ class SessionsController < ApplicationController
   end
 
   def unauthorized
-    flash.alert = "You are not authorized to view this page."
-    redirect_to "/login"
+    redirect_to login_path, alert: "You are not authorized to view this page."
   end
 
   def semi_authorized!
