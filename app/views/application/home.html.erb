@@ -3,5 +3,5 @@
   <%= link_to "Logout", "/logout", method: :delete %> <br />
   Click <%= link_to "here", "/restricted" %> to see a super secret page!
 <% else %>
-  Welcome! Please <%= link_to "log in", "login" %>.
+  Welcome! Please <%= link_to "log in", "login" %> or <%= link_to "sign up", new_users_path %>.
 <% end %>
