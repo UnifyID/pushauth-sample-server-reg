@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root "application#home"
 
-  resource :users, only: [:new, :create]
+  resource :users, only: [:new, :create] do
+    post "trust"
+
+    get "post_signup"
+  end
 
   get "login", to: "sessions#new"
 
