@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
+
   skip_before_action :authorized
+  skip_before_action :verify_authenticity_token, only: :trust
+  http_basic_authenticate_with name: Rails.application.credentials.unifyid[:basic_username],
+    password: Rails.application.credentials.unifyid[:basic_password],
+    only: :trust
+
   def new
     @user = User.new
   end
@@ -19,11 +25,6 @@ class UsersController < ApplicationController
   def post_signup
     @access_code = session[:signup_access_code]
   end
-
-  skip_before_action :verify_authenticity_token, only: :trust
-  http_basic_authenticate_with name: Rails.application.credentials.unifyid[:basic_username],
-    password: Rails.application.credentials.unifyid[:basic_password],
-    only: :trust
 
   def trust
     @user = User.find_by(username: params[:id])
