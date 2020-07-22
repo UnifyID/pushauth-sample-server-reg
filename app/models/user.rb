@@ -12,7 +12,8 @@ class User < ApplicationRecord
   end
 
   private
+
   def generate_verification_code
-    self.verification_code = rand(1000...9999)
+    self.verification_code = SecureRandom.rand(1000...9999)
   end
 end
