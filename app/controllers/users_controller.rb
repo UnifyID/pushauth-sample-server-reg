@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   skip_before_action :authorized
   skip_before_action :verify_authenticity_token, only: :trust
   http_basic_authenticate_with name: Rails.application.credentials.unifyid[:basic_username],
