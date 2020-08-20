@@ -2,12 +2,12 @@ import Rails from "@rails/ujs";
 let check_status = window.setInterval(function() {
   Rails.ajax({
     type: "GET",
-    url: "/2fa/check",
+    url: "/mfa/check",
     success: function(r) {
-      if (r === "accepted" || r === "rejected" || r === "invalid request") {
+      if (r !== "sent") {
         Rails.ajax({
           type: "PATCH",
-          url: "/2fa/finalize",
+          url: "/mfa/finalize",
           success: function() {
             window.clearInterval(check_status);
             window.location.href = "/";
