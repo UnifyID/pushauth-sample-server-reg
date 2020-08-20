@@ -1,7 +1,7 @@
 # PushAuthDemo
 
-This is a sample Rails application for demoing basic PushAuth multi-factor authentication.
-See [here](https://unifyid.atlassian.net/wiki/spaces/~592566634/pages/400654353/PushAuth+Reference+Project#Website-with-Basic-Login-Plus-Mobile-App) for a description of the project.
+This is a sample Rails application for demonstrating basic PushAuth multi-factor authentication.
+See [here](https://blog.unify.id/2020/07/17/the-power-of-pushauth/) for some background.
 
 ### Functionality
 
@@ -12,7 +12,8 @@ See [here](https://unifyid.atlassian.net/wiki/spaces/~592566634/pages/400654353/
 
 ### Getting Started
 
-First, install Ruby and the project dependencies:
+First, install Ruby and the project dependencies.
+Here are Mac/Linux instructions:
 
 ```
 # Install RVM
@@ -41,15 +42,23 @@ Now, create a user:
 
 ```
 $ bundle exec rails console
-> User.create(:username => "{username}", :password => "{password}").save
+> User.create(:username => "<your_username>", :password => "<your_password>")
 > exit
 ```
 
-Note that the username should match the client ID that will be used for the PushAuth API.
+Note that the username should match the username you enter in the corresponding mobile app.
 
-Finally, fire up the dev server and connect!
+Next, run `rails credentials:edit` and enter your UnifyID PushAuth API key in the following format:
 
 ```
-$ bundle exec rails server &
-$ open http://localhost:3000/
+unifyid:
+  server_api_key: <your_key_goes_here>
 ```
+
+Finally, fire up the dev server!
+
+```
+$ bundle exec rails server
+```
+
+You're good to go! Swing over to [localhost:3000](http://localhost:3000/) to see the demo!

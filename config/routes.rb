@@ -11,11 +11,11 @@ Rails.application.routes.draw do
 
   post "login", to: "sessions#create"
 
-  get "2fa", to: "sessions#init_2fa"
+  get "mfa", to: "sessions#init_mfa"
 
-  get "2fa/check", to: "sessions#check_2fa"
+  get "mfa/check", to: "sessions#check_mfa"
 
-  patch "2fa/finalize", to: "sessions#finalize_2fa"
+  patch "mfa/finalize", to: "sessions#finalize_mfa"
 
   delete "logout", to: "sessions#destroy"
 
