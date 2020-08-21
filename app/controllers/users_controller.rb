@@ -13,16 +13,17 @@ class UsersController < ApplicationController
     @user = User.new(params.require(:user).permit(:username, :password))
 
     if @user.save
-      session[:signup_user] = @user.id
-      session[:signup_access_code] = @user.verification_code
+      session[:signup_username] = @user.username
+      session[:signup_verification_code] = @user.verification_code
       redirect_to post_signup_users_path
     else
-      render :new and return
+      render :new
     end
   end
 
   def post_signup
-    @access_code = session[:signup_access_code]
+    @username = session[:signup_username]
+    @access_code = session[:signup_verification_code]
   end
 
   def trust
