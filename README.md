@@ -38,20 +38,13 @@ Then, initialize the database:
 $ bundle exec rails db:migrate
 ```
 
-Now, create a user:
-
-```
-$ bundle exec rails console
-> User.create(:username => "<your_username>", :password => "<your_password>")
-> exit
-```
-
-Note that the username should match the username you enter in the corresponding mobile app.
 
 Next, run `rails credentials:edit` and enter your UnifyID PushAuth API key in the following format:
 
 ```
 unifyid:
+  basic_username: <basic auth username for /users/trust webhook endpoint>
+  basic_password: <basic auth password for /users/trust webhook endpoint>
   server_api_key: <your_key_goes_here>
 ```
 
