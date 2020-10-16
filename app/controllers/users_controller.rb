@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def post_signup
     @username = session[:signup_username]
-    @access_code = session[:signup_verification_code]
+    @pairing_code = session[:signup_verification_code]
   end
 
   def trust
