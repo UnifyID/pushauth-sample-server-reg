@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def trust
     @user = User.find_by(username: params[:user])
-    if @user && @user.consume_verification_code(params[:pairingCode].to_i)
+    if @user && @user.consume_verification_code(params[:challenge].to_i)
       head :ok
     else
       head :unauthorized
