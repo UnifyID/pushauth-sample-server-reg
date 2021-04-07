@@ -9,26 +9,20 @@ See [here](https://blog.unify.id/2020/07/17/the-power-of-pushauth/) for some bac
 - Access control based on login status
 - Log out
 
+### Prerequisite
+* [Ruby](https://www.ruby-lang.org/en/documentation/installation/) 2.7.1 (we recommend using [rvm](https://rvm.io/))
+* [Rails](https://rubyonrails.org/) framework
+* [Yarn](https://classic.yarnpkg.com/en/docs/install/)
 
 ### Getting Started
 
 First, install Ruby and the project dependencies.
-Here are Mac/Linux instructions:
 
 ```
-# Install RVM
-\curl -sSL https://get.rvm.io | bash -s stable
-# note: after this, either restart your terminal or run the source command that the above will print
-
-# Install Ruby
-rvm install 2.7.1
-rvm use --default 2.7.1
-
 # Install project dependencies
 bundle install
 
-# Install yarn and update yarn packages
-brew install yarn
+# Update yarn packages
 yarn install --check-files
 ```
 
